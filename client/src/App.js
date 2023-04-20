@@ -1,23 +1,62 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import SignUpForm from "./Components/SignUpForm";
+import Login from "./Components/Login";
+import { Route, Routes } from "react-router-dom";
+import Landing from "./Components/Landing";
+import { useEffect, useState, createContext } from "react";
+import Courses from "./Components/Courses";
+import Units from "./Components/Units";
+import About from "./Components/About";
+import Contact from "./Components/Contact";
+import Dashboard from "./Components/Dashboard";
+import ResetPassword from "./Components/ResetPassword";
+import AdminSignup from "./Components/AdminSignup";
+import AdminLogin from "./Components/AdminLogin";
+import AdminDashboard from "./Components/AdminDashboard";
+import NewCourse from "./Components/NewCourse";
 
+export const UserContext = createContext();
+export const AdminContext = createContext();
 function App() {
+   const [user, setUser] = useState(false);
+   const [admin, setAdmin] = useState(false);
+
+  useEffect(() => {
+    fetch("/me").then((response) => {
+      if (response.status === 200) {
+        response.json().then((user) => setUser(true));
+      }
+    });
+  }, []);
+
+  useEffect(() => {
+    fetch("/adminme").then((response) => {
+      if (response.status === 200) {
+        response.json().then((admin) => setAdmin(true));
+      }
+    });
+  }, []);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <UserContext.Provider value={[user, setUser]}>
+      <AdminContext.Provider value={[admin, setAdmin]}>
+      <Routes>
+        <Route path="/" element={<Landing />}></Route>
+        <Route path="/sign-up" element={<SignUpForm />}></Route>
+        <Route path="/login" element={<Login />}></Route>
+        <Route path="/adminlogin" element={<AdminLogin />}></Route>
+        <Route path="/adminsignup" element={<AdminSignup/>} ></Route>
+        <Route path="/courses" element={<Courses />}></Route>
+        <Route path="/courses/units/:id" element={<Units />}></Route>
+        <Route path="/admindashboard" element={<AdminDashboard />}></Route>
+        <Route path="/about" element={<About />}></Route>
+        <Route path="/contact" element={<Contact />}></Route>
+        <Route path="/dashboard" element={<Dashboard />}></Route>
+        <Route path="/reset-password" element={<ResetPassword />}></Route>
+        <Route path="/new-course" element={<NewCourse />}></Route>
+      </Routes>
+      </AdminContext.Provider>
+      </UserContext.Provider>
     </div>
   );
 }
