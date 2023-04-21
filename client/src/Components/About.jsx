@@ -89,7 +89,7 @@ function About() {
               Get a course in mind, research about it and make sure it suits
               you. Contact the administrator at this email below.
             </p>
-            <p className="underline">emmanuelmutisya@gmail.com</p>
+            <p className="underline">daisyjebby@gmail.com</p>
           </div>
 
           <div className="max-w-sm p-6 bg-slate-300 border border-slate-600 rounded-lg shadow">
@@ -114,7 +114,7 @@ function About() {
               Get an activity, research about it and make sure it suits you.
               Contact the administrator at this email below.
             </p>
-            <p className="underline">viviandande@gmail.com</p>
+            <p className="underline">chesirdaisy@gmail.com</p>
           </div>
 
           <div className="max-w-sm p-6 bg-slate-300 border border-slate-600 rounded-lg shadow">
@@ -139,7 +139,7 @@ function About() {
               Get info on past classes, this is not to encourage to to miss
               classes. Contact the administrator at this email below.
             </p>
-            <p className="underline">josephwamitie@gmail.com</p>
+            <p className="underline">daisyjebby@gmail.com</p>
           </div>
         </div>
       </div>
