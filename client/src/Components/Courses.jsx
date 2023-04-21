@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import Swal from "sweetalert2";
-import { AdminContext } from "../App";
+import { AdminContext } from "../App.js";
 
 function Courses() {
   const [courses, setCourses] = useState([]);

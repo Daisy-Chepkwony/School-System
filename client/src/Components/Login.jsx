@@ -3,7 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import { GiPadlock } from "react-icons/gi";
 import { RiAccountCircleFill } from "react-icons/ri";
-import { UserContext } from "../App";
+import { UserContext } from "../App.js";
 
 function Login() {
   const navigate = useNavigate();

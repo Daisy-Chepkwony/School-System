@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import Swal from "sweetalert2";
-import { AdminContext } from "../App";
+import { AdminContext } from "../App.js";
 
 function AdminLogin() {
   const navigate = useNavigate();

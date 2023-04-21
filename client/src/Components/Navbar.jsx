@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import { AdminContext, UserContext } from "../App";
+import { AdminContext, UserContext } from "../App.js";
 
 function Nav() {
   const navigate = useNavigate();
