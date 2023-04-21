@@ -121,7 +121,7 @@ export default function Contact() {
               </div>
               <div className="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
                 <h2 className="text-indigo-500 underline">
-                  emmanuelmutisya@email.com
+                  daisyjebby@gmail.com
                 </h2>
                 <p className="leading-normal my-5">
                   Ngong Road
